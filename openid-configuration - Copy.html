@@ -2,7 +2,7 @@
 <html>
 <script type="text/javascript">
 window.addEventListener("load", function() {
-	fetch("https://sso.example.com:8443/uas/.well-known/openid-configuration")
+	fetch("https://login.example.ubidemo.com/uas/.well-known/openid-configuration")
 		.then(function(response) {
 			document.getElementById("url").textContent = response.url;
 			return response.json();

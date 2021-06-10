@@ -2,7 +2,7 @@
 <html>
 <script type="text/javascript">
 window.addEventListener("load", function() {
-	fetch("https://sso.example.com:8443/uas/discovery?entityID=cn=Ubilogin,ou=System")
+	fetch("https://login.example.ubidemo.com/uas/discovery?entityID=cn=Ubilogin,ou=System")
 		.then(function(response) {
 			document.getElementById("url").textContent = response.url;
 			return response.json();
