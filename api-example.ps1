@@ -27,3 +27,4 @@ $metadata = @{
 "Body"='{"redirect_uris":["http://localhost/example"]}'
 }
 $registration = $application | Set-SSOAttribute @metadata 
+$registration | ConvertTo-Json

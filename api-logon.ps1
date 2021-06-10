@@ -9,10 +9,12 @@ $sso_config = @{
     "Uri"="https://login.example.ubidemo.com"
 }
 
-$registration = @{
-    "ClientId"="public"
-    "ClientSecret"=(ConvertTo-SecureString -String "public" -AsPlainText -Force)
-    "RedirectUri"="http://localhost/public"
+$registration = @"
+{
+    "client_id": "public",
+    "client_secret": "public",
+    "redirect_uris": [ "http://localhost/public" ]
 }
+"@
 
-New-OAuthClientConfig @registration | New-SSOLogon @sso_config -Browser "default" -ForceAuthn:$false
+New-OAuthClientConfig -Json $registration | New-SSOLogon @sso_config -Browser "default" -ForceAuthn:$false
