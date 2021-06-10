@@ -2,8 +2,8 @@ Import-Module "Ubisecure.OAuth2"
 Import-Module "Ubisecure.SSO.Management"
 
 $sso_config = @{
-    "ManageUri"="https://manage.example.ubidemo.com"
-    "Uri"="https://login.example.ubidemo.com"
+    "ManageUri"="https://sso.example.com:8443"
+    "Uri"="https://sso.example.com:8443"
 }
 
 $registration = @{
@@ -12,4 +12,4 @@ $registration = @{
     "RedirectUri"="http://localhost/public"
 }
 
-New-OAuthClientConfig @registration | New-SSOLogon @sso_config -Browser "default" -ForceAuthn:$false
+New-OAuthClientConfig @registration | New-SSOLogon @sso_config -Browser "default" 

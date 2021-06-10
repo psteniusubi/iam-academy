@@ -3,7 +3,7 @@
 <script type="text/javascript">
 window.addEventListener("load", function() {
 	fetch(
-        "https://login.example.ubidemo.com/uas/refresh/status.json", { credentials: "include" })
+        "https://sso.example.com:8443/uas/refresh/status.json", { credentials: "include" })
 		.then(function(response) {
 			document.getElementById("url").textContent = response.url;
 			return response.json();
@@ -20,8 +20,8 @@ window.addEventListener("load", function() {
 </p>
 
 <p>
-<a href="https://manage.example.ubidemo.com/ubilogin" target="_blank">Login</a>
-<a href="https://login.example.ubidemo.com/uas/logout" target="_blank">Logout</a>
+<a href="https://sso.example.com:8443/ubilogin" target="_blank">Login</a>
+<a href="https://sso.example.com:8443/uas/logout" target="_blank">Logout</a>
 </p>
 
 </html>
