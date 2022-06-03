@@ -21,10 +21,8 @@ $policy = $site | Set-SSOChild -ChildType "policy" "policy"
 $application | Set-SSOLink $policy | Out-Null
 
 # PUT /aplication/iam-academy/example/$attribute/metadata
-$metadata = @{
-"Name"="metadata"
-"ContentType"="application/json"
-"Body"='{"redirect_uris":["http://localhost/example"]}'
-}
-$registration = $application | Set-SSOAttribute @metadata 
+$metadata = @"
+{ "redirect_uris":[ "http://localhost/example" ] }
+"@
+$registration = $application | Set-SSOAttribute "metadata" -ContentType "application/json" -Body $metadata
 $registration | ConvertTo-Json
